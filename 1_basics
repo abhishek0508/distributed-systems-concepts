@@ -1,0 +1,103 @@
+A Distributed System is acollection of independent computers that appear to its users
+as a single coherent system.
+Scalability -> 
+    is the property of a system to handle a growing amount of work by adding resources
+    to the system. 
+    Usually measured in RPS, TPS or QPS.
+    (Requests per second, Trasaction Per Second, Queries Per Second)
+
+Availability -> 
+    of a distributed system is measured as time for which system is available to handle 
+    requests in a given time period.
+    Usually measured in ‘nines’.
+
+See Table of 9's png
+
+VERTICAL SCALING
+    Advantages:
+    • No design changes required.
+    • Minimal code changes required.
+    Disadvantages:
+    •  Vertical Scaling has a limit.
+    •  Difficult to scale down.
+    •  Increase in cost is not proportional to load.
+
+Horizontal Scaling
+ (or scaling out) means adding more nodes to application to handle more load
+    Advantages:
+    •  Dynamic scaling is possible by adding new machines.
+    •  Scaling down is easy when load decreases.
+    •  No limit on resources.
+    •  Better availability because of redundancy.
+    Disadvantages:
+    •  Design needs to support horizontal scaling.
+    •  Code needs changes to support horizontal scaling
+
+DISTRIBUTED SYSTEM TECHNIQUES
+    1.Data Partitioning
+    2.Data Replication
+
+    Data partitioning is the process in which the data is logically grouped and
+    stored at multiple locations (different computers or servers).
+
+    Partitioning strategies
+    1.Range Partitioning: Select a partition key and partition the data in ranges 
+    of the partition key.Example: User data with zip code 7000-7999 is stored in one
+    partition.
+    2.Hash Partitioning: Apply a hash function to partition key to get partition number. 
+
+    Data replication is the process in which the data is copied at multiple locations 
+    (different computers or servers).
+
+    Replication increases scalability of distributed system by allowing multiple parallel 
+    reads on the data replicas.
+
+    Replication increases availability of distributed system by allowing operations on
+    replicas even when some replicas have failed.
+
+    Types of data replication:
+    •Synchronous Replication: All replicas are updated before request is completed.
+    •Asynchronous Replication: Request is completed before replicas are updated.
+    •Quorum Replication: Request is completed when majority replicas are updated.
+        Remaining replicas are updated asynchronously.
+
+         ... replication causes Consistency Issues.
+
+CONSISTENCY
+    Consistency in distributed systems talks about how read operations behave
+    after a write operation where data is updated on multiple replicas
+    ... not to be confused with Consistency in ACID database properties.
+
+    Consistency models:
+    •Strong Consistency: When a replicated storage system behaves indistinguishably from a storage system running on a single computer,
+        we say it is strongly consistent. In other words, Every read operation always gives 
+        values written by last write operation.
+    •Weak Consistency: When a replicated storage system allows read operations to return
+        values that may not be written by last write operation, it say it is weakly consistent.
+
+        Why not always use strong consistency?
+    
+CAP THEOREM
+    CAP terminology
+    •Consistency:A guarantee that every read receives the most recent write or an error.
+    
+    •Availability: A guarantee that every request receives a (non-error) response,
+    without the guarantee that it contains the most recent write
+    
+    •Partition Tolerance: A guarantee that the system continues to operate despite
+    an arbitrary number of messages being dropped (or delayed) by the network between 
+    nodes
+
+The CAP theorem implies that in the presence of a network partition,
+one has to choose between consistency and availability.
+
+Partition tolerance guarantee must be given by the system as network/hardware failures 
+cannot be reduced to zero. 
+
+To build a strongly consistent system, you have to let go of availability. 
+This is called CP system.
+
+To build an available system, you have to let go of strong consistency.
+This is called AP system.
+
+AP vs CP.. which one is better?

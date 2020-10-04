@@ -1,0 +1,32 @@
+caching 
+indexing
+denormalization
+
+caching ->
+    Caching is the process of storing frequently or recently used data in the main memory
+    of the system or RAM so as to make the repeated retrieval of the requested data faster.
+    In this video, you will see the implementation of caching in a Spring project. 
+    You will also see how caching helps in faster query
+    retrieval by comparing the retrieval times between the methods with and without caching.
+
+    reading from ssd -> 1-20gb/sec
+    reading from mm -> 100-200mb/second
+    (hence caching helps a lot)
+    example of caching -> FAQ's in website, as frequently accessed and data doesn't change
+
+    can be done in spring project with dependency & annotation to cache particular method
+    @EnableCahing
+
+indexing -> 
+    you know indexing
+
+denormalization ->
+    Ever wondered what would happen if you have to search through 10 different tables to 
+    find out a record? Let’s say that there is an e-commerce application; and to search for
+    the orders of a particular customer, they have to search through six different tables.
+    Won’t it be an expensive search? 
+    Yes. That's why it may make sense to duplicate the customer details and store the customer details data in the Orders table itself.
+
+    In this video, you will learn about the process of denormalisation, wherein the tables 
+    are merged to store the different attributes of the records together.
+

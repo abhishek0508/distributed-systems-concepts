@@ -1,0 +1,13 @@
+Content delivery network
+Introduction
+    A content delivery network (CDN) is a globally distributed network of proxy servers,
+    serving content from locations closer to the user. Generally, static files such 
+    as HTML/CSS/JS, photos, and videos are served from CDN, although some CDNs such as 
+    Amazon's CloudFront support dynamic content. The site's DNS resolution will tell 
+    clients which server to contact.
+
+Push CDNs
+    Push CDNs receive new content whenever changes occur on your server. 
+
+Pull CDNs
+    Pull CDNs grab new content from your server when the first user requests the content. 

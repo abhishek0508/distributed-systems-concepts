@@ -1,0 +1,55 @@
+Microservices
+Load balancers
+Queues
+Global caches
+Sharding(Data Partitioning)
+Data replication
+Asynchronism
+
+
+Points:
+    Latency is the time to perform some action or to produce some result.
+    Throughput is the number of such actions or results per unit of time.
+    Generally, you should aim for maximal throughput with acceptable latency.
+
+Microservices
+    You Know it.
+
+Load Balancer(see Loadbalacer image)
+    Load balancers distribute incoming client requests to computing resources such as 
+    application servers and databases. In each case, the load balancer returns the response 
+    from the computing resource to the appropriate client. Load balancers are effective at:
+    Load balancers can route traffic based on various metrics, including:
+
+    Random
+    Least loaded
+    Session/cookies
+    Round robin or weighted round robin
+    Layer 4
+    Layer 7
+
+Asynchronism
+    Message Queues
+    Task Queues
+    Back Pressure
+
+Sharding
+    See sharding png
+    Sharding distributes data across different databases such that each database can only
+    manage a subset of the data. Taking a users database as an example, as the number of
+    users increases, more shards are added to the cluster.
+
+    Disadvantage(s): sharding
+
+    You'll need to update your application logic to work with shards, which could result in complex SQL queries.
+    Data distribution can become lopsided in a shard. For example, a set of power users on a shard could result in increased load to that shard compared to others.
+        Rebalancing adds additional complexity. A sharding function based on consistent hashing can reduce the amount of transferred data.
+    Joining data from multiple shards is more complex.
+    Sharding adds more hardware and additional complexity.
+
+
+
+
+
+
+

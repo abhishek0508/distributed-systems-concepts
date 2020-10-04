@@ -1,0 +1,31 @@
+where to send the request if we have many servers?
+this managing of where to send request is load balancing
+
+this sending of request evenly across all server can be done using consistent hashing
+
+process -> request id from 0 to M-1
+now this request id is hashed, and then we do mod
+h(r1) = m1%N
+(N) = no of servers
+
+this gets us the which server is used to serve the request
+this hash function is uniformly random, hence the request gets mapped uniformly to
+servers, 
+
+now, a new server gets added to the existing set of servers, 
+this sudden change in no of servers, make chanage of mapping from request id to servers
+in huge amount, which is not desireable, 
+
+this problem is solved by creating by a circular data strcuture, in which both request id
+and server id is mapped, now request id is served by the nearest server id in the circular track.
+
+
+now, again there may be a problem when a server goes down, it may possible that a single server
+now serves half of the load, how to solve this?
+
+we create virtual server(not really), we create K hashing functions, we get K server id's
+to be mapped on circular track for a single serve. 
+https://www.toptal.com/big-data/consistent-hashing 
+see above link for description.
+
+

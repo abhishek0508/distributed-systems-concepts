@@ -1,0 +1,5 @@
+performance -> sharding
+faults(across of 1000's of servers, hence fault is eminent) -> tolerance
+tolerance -> replication
+replication -> inconsistency
+consistent -> low performance
