@@ -1,0 +1,15 @@
+your system shouldn't have single point of failure
+    mitigate as much as possible
+    like add/replicate server, replicate database etc.
+
+Ways 
+    More Nodes,
+    Master Slave
+
+facebook.com
+
+Netflix
+    Chaos Monkey,
+    which goes and takes down one of the server, to check whether system is really
+    resilient or not.
+    

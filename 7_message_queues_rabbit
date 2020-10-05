@@ -1,0 +1,21 @@
+message queues brings use of asynchronous behaviour to systems
+where you don't have to wait for immediate response isn't need, rather a confirmation
+that your request will be served.
+
+Messaging Queues provide useful features such as persistence, routing and task management.
+
+suppose you get lot of request's from client to serve
+or, you made network call which is supposed to have heavy processing,
+or, you need to update your UI(:p, javascript)
+
+this requests can be put into message queues from where system can take requests one by one
+and can process this one by one
+
+Read more about RabbitMQ.
+https://www.rabbitmq.com/getstarted.html
+
+JMS(java messaging queue, OpenMQ)
+https://javaee.github.io/openmq/ 
+
+http://blog.codepath.com/2013/01/06/asynchronous-processing-in-web-applications-part-2-developers-need-to-understand-message-queues/
+https://www.cloudamqp.com/blog/2014-12-03-what-is-message-queuing.html

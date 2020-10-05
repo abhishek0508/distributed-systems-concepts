@@ -1,0 +1,39 @@
+find amount of storage needed by youtube daily
+
+assumptions
+    no of users 1 billion
+    2 hrs of vides aquires 0.4gb or 400mb
+    (it can based on torrent file size, like 2 hrs movies 1.1gb-800mb)
+
+    how many users are uploading the video?, 
+    lets assume, (1/1000) are uploading, can be different
+    hence total users uploading videos 
+    (10*9) *(1/1000) = 10^6 videos,
+
+    hence,
+    assumption lets assume, each videos is 10 mins,
+    based on above assumption each video size is 40mb 
+
+    hence total video size is -> (10^6*40)
+
+    Now, replication for fault tolerance and faster reads, 
+    3 times -> 3*10^6*40
+
+    Also, different quality leads to 2 times, -> 2*3*10^6*40
+
+Estimating cache requirements,
+    what to cache?
+    thumbnails & captions 
+    size of thubnails -> 10kb, captions 10kb
+
+    of all contents, for last 90 days
+    90 * 10Kb * (10^6)(per days) -> 1TB
+
+    no of computers  = 1TB/(16GB) => 64 nodes, 
+    
+    can't have entire capacity, also fault tolerance hence => (64*3)*2
+    500 nodes with 16GB ram as cache
+
+
+Estimating number of processor required to process videos
+    see image capacity_estimation

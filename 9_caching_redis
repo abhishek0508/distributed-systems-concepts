@@ -1,0 +1,32 @@
+Caching
+Two primary reasons
+    storing frequently accessed data.
+    Avoiding repeated computation.
+We need to predict which data may be required in cache, hence
+    Two questions
+    When to load into cache
+    when to evict from cache
+    Cache Policy
+    LRU is most common
+Problems with cache 
+    Thrashing
+    Consistency (other client may update database server however cache doesn't have recent
+    data, which dirty read)
+    Poor eviction Policy
+where to place the cache 
+    Near to database
+    or Near to server
+
+Or Place in between server and database,
+    also know as global cache, or redis,
+    which is persistent storage but act likes cache
+
+write through cache
+    write in cache, then write in database as well, hence no problem of consistency
+    it is inconsistent if multiple server have copies of data.
+write back cache   
+    write in database, and invalidate the cache value.
+
+
+
+

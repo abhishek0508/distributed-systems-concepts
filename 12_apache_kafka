@@ -1,0 +1,26 @@
+Apache kafka is a layer between different systems that passes messages between them
+can be compared with RabbitMQ, ActiveMQ, however with wide variety of use cases
+
+Kafka is a distributed, partitioned, replicated commit log service. 
+It provides the functionality of a messaging system, but with a unique design.
+
+Key takeaways:
+
+    Kafka maintains feeds of messages in categories called topics.
+    We'll call processes that publish messages to a Kafka topic producers.
+    We'll call processes that subscribe to topics and process the feed of published messages consumers..
+    Kafka is run as a cluster comprised of one or more servers each of which is called a broker.
+
+
+Some of the use cases
+
+    Messaging: Kafka works well as a replacement for a more traditional message broker. In this domain Kafka is comparable to traditional messaging systems such as ActiveMQ or RabbitMQ
+    Website Activity Tracking: The original use case for Kafka was to be able to rebuild a user activity tracking pipeline as a set of real-time publish-subscribe feeds
+    Metrics: Kafka is often used for operational monitoring data, which involves aggregating statistics from distributed applications to produce centralized feeds of operational data
+    Log Aggregation
+    Stream Processing
+    Event sourcing is a style of application design where state changes are logged as a time-ordered sequence of records.
+    Commit Log: Kafka can serve as a kind of external commit-log for a distributed system. The log helps replicate data between nodes and acts as a re-syncing mechanism for failed nodes to restore their data
+
+See images for use cases & architecture
+

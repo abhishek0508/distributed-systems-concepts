@@ -1,0 +1,30 @@
+ways of scaling database queries can be indexing, optimizing query, still these methods
+can't handle huge data.
+
+hence, sharding, 
+
+Horizontal partitioning
+    we partition the database into multiple parts based on use case,
+    for example it can based on zip-code of user,
+    or on the basis of user-id's
+    for tinder, we can shard the database based on location, 
+    hence user will get faster query response.
+
+    we can also create index on shards, for example find all people in new york whose
+    age is greater than 50.
+    here shards are based on location, and index on age.
+
+Vertical partitioning
+    based on attributes, like entire name column in one database server, other attributes
+    in other servers
+
+problems -> queries can be which requires data from multiple partition(joins across shards)
+    how to handle this?
+    extremely expensive, as join across networks
+    shards may fails. -> master-slave architecture can handle this.
+
+thumbs up rule -> go for indexing, optimizing, if still large requirement then go for sharding.
+
+
+
+
